@@ -1,0 +1,51 @@
+<section class="lede section--padding-both">
+    <div class="container">
+        <p>Pets Page</p>
+    </div>
+</section>
+
+<h1>This is the pet state</h1>
+
+
+
+
+<div class="pet-grid__item   grid__item one-half large--one-third" >
+
+    <pet></pet>
+
+    <!--pet skeleton-->
+    <div ng-repeat="pet in pets"
+        <!--pet Image-->
+        <!--pet Image click collapse the image-->
+        
+        <a class="pet-grid__pet" >
+            <img class="pet-grid__img"   sizes="(min-width: 960px) 33vw, (min-width: 769px) 50vw, 100vw" alt="">
+        </a>
+        
+        <a class="pet-grid__pet">
+        <img ng-src="{{pet.image}}" ng-show="showImage">
+        <button ng-click="showImage = !showImage">show image</button>
+        </a>
+
+        <!--pet Meta-->
+        <div class="pet-grid__meta">
+            <!--Title click should redirect to the pet-details section. Remember to pass along the pet id so you can make an api call
+        to get the specific pet details--><button ui-sref="bio({id: pet.id})"> click to view details</button>
+            <h3 class="pet-grid__name"><a><!--Name-->{{pet.name}}</a></h3>
+
+            <!--pet Breed-->
+            <h4 class="pet-grid__sub"><!--Breed-->{{pet.breed}}</h4>
+
+            <!--pet Age-->
+            <div class="pet-grid__price"><!--Age-->{{pet.age}}</div>
+        
+
+
+        </div>
+    <!--End pet Skeleton-->
+</div>
+</div>
+
+
+
+
